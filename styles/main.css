@@ -30,3 +30,10 @@ header {
   display: flex;
   justify-content: center;
 }
+
+.game-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}

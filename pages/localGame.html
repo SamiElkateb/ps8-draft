@@ -5,14 +5,15 @@
       <link rel="icon" type="image/svg+xml" href="/vite.svg" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Connect 4 - Choose a Game</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-  <link href="../main.css" rel="stylesheet">
-  <script type="module" src="../components/PixelButton.js"></script>
-  <script type="module" src="../components/PixelLink.js"></script>
-  <script type="module" src="../components/PageTitle.js"></script>
-  <script type="module" src="../components/BoardGrid.js"></script>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+      <link href="../styles/index.css" rel="stylesheet">
+      <script type="module" src="../components/PixelButton.js"></script>
+      <script type="module" src="../components/PixelLink.js"></script>
+      <script type="module" src="../components/PageTitle.js"></script>
+      <script type="module" src="../components/BoardGrid.js"></script>
+      <script type="module" src="../components/ChatBox.js"></script>
 </head>
 <body>
 <div id="app">
@@ -27,7 +28,8 @@
   </header>
 
   <page-title title="Player1 VS Player2"></page-title>
-  <div style="display: flex;flex-wrap: wrap;justify-content: center">
+  <div class="game-container">
+    <chat-box></chat-box>
     <board-grid></board-grid>
     <pixel-button style="align-self: center">Save game</pixel-button>
   </div>
