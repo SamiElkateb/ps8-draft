@@ -73,6 +73,7 @@ template.innerHTML = `
       flex-basis: 100%;
       color: red;
       display: none;
+      position: absolute;
     }
     .error>input{
       background-color: rgba(255, 0, 0, 0.05);
