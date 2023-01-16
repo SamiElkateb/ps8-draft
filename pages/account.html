@@ -11,6 +11,7 @@
     <link href="../styles/main.css" rel="stylesheet">
     <script type="module" src="../components/PixelButton.js"></script>
     <script type="module" src="../components/PixelLink.js"></script>
+    <script type="module" src="../components/PixelInput.js"></script>
     <script type="module" src="../components/PageTitle.js"></script>
   </head>
   <body>
@@ -28,8 +29,18 @@
       <page-title title="Connexion" ></page-title>
       <nav class="connexion-nav">
         <pixel-button>Login</pixel-button>
-        <pixel-button href="/pages/profile.html">Signup</pixel-button>
+        <pixel-button>Signup</pixel-button>
       </nav>
+      <form class="login-form">
+        <pixel-input value="Username"></pixel-input>
+        <pixel-input value="Password"></pixel-input>
+      </form>
+
+      <form class="signup-form">
+        <pixel-input value="Username"></pixel-input>
+        <pixel-input value="Password"></pixel-input>
+      </form>
+
 
     </div>
   </body>
