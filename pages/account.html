@@ -5,17 +5,18 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Connect 4 - Messages</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-    <link href="../main.css" rel="stylesheet">
+    <link href="../styles/main.css" rel="stylesheet">
     <script type="module" src="../components/PixelButton.js"></script>
     <script type="module" src="../components/PixelLink.js"></script>
+    <script type="module" src="../components/PixelInput.js"></script>
     <script type="module" src="../components/PageTitle.js"></script>
   </head>
   <body>
     <div id="app">
-      <header> 
+      <header>
         <pixel-link size="xs" href="/"><img src="../icons/home.svg" /></pixel-link>
 
         <nav class="secondary-nav">
@@ -25,7 +26,22 @@
         </nav>
       </header>
 
-      <page-title title="Bob" subtitle="Messages"  logo="none"></page-title>
+      <page-title title="Connexion" ></page-title>
+      <nav class="connexion-nav">
+        <pixel-button>Login</pixel-button>
+        <pixel-button>Signup</pixel-button>
+      </nav>
+      <form class="login-form">
+        <pixel-input value="Username"></pixel-input>
+        <pixel-input value="Password"></pixel-input>
+      </form>
+
+      <form class="signup-form">
+        <pixel-input value="Username"></pixel-input>
+        <pixel-input value="Password"></pixel-input>
+      </form>
+
+
     </div>
   </body>
 </html>

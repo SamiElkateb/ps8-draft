@@ -25,3 +25,8 @@ header {
   flex-direction: column;
   align-items: center;
 }
+
+.connexion-nav{
+  display: flex;
+  justify-content: center;
+}

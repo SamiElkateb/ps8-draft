@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Connect 4 - Game</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <title>Connect 4 - Choose a Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link href="../main.css" rel="stylesheet">
     <script type="module" src="../components/PixelButton.js"></script>
@@ -16,7 +16,7 @@
   </head>
   <body>
     <div id="app">
-      <header> 
+      <header>
         <pixel-link size="xs" href="/"><img src="../icons/home.svg" /></pixel-link>
 
         <nav class="secondary-nav">
@@ -26,10 +26,13 @@
         </nav>
       </header>
 
-      <page-title title="Player1 VS Player2"></page-title>
-      <div style="display: flex;flex-wrap: wrap;justify-content: center">
-      <board-grid></board-grid>
-      <pixel-button style="align-self: center">Save game</pixel-button>
-      </div>
+      <page-title title="Choose your game type"></page-title>
+      <nav class="main-nav">
+        <pixel-link href="/pages/localGame.html">Local</pixel-link>
+        <pixel-link href="/pages/profile.html">Online</pixel-link>
+        <pixel-link href="/pages/profile.html">VS bot</pixel-link>
+        <pixel-link color="back" href="../index.html">Back</pixel-link>
+      </nav>
+    </div>
   </body>
 </html>

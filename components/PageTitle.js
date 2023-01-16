@@ -7,6 +7,7 @@ template.innerHTML = `
       font-size: 3rem;
       font-family: 'VT323', monospace;
       margin: 0px;
+      font-weight: normal;
     }
 
     h2{

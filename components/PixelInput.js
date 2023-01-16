@@ -1,10 +1,7 @@
 const template = document.createElement('template');
 template.innerHTML = `
   <style>
-    .pixel-link{
-      box-sizing: border-box;
-      text-decoration: none;
-      text-align: center;
+    .pixel-input{
       cursor: pointer;
       font-family: 'VT323', monospace;
       display: block;
@@ -32,15 +29,9 @@ template.innerHTML = `
       border-image-source: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12'><path d='M2 2h2v2H2zM4 0h2v2H4zM10 4h2v2h-2zM0 4h2v2H0zM6 0h2v2H6zM8 2h2v2H8zM8 8h2v2H8zM6 10h2v2H6zM0 6h2v2H0zM10 6h2v2h-2zM4 10h2v2H4zM2 8h2v2H2z' fill='white' /></svg>");
     }
 
-    .color-back {
-    color: yellow;
-    border-color: yellow;
-    border-image-source: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12'><path d='M2 2h2v2H2zM4 0h2v2H4zM10 4h2v2h-2zM0 4h2v2H0zM6 0h2v2H6zM8 2h2v2H8zM8 8h2v2H8zM6 10h2v2H6zM0 6h2v2H0zM10 6h2v2h-2zM4 10h2v2H4zM2 8h2v2H2z' fill='yellow' /></svg>");
-    }
 
     .size-xs{
       margin:0.3rem;
-      padding: 0.15rem 0.4rem;
     }
 
     .size-sm{
@@ -54,21 +45,15 @@ template.innerHTML = `
       min-width: 8rem;
     }
 
-    .pixel-link:hover{
-      opacity: 0.8;
-    }
-
     ::slotted(*) {
       width:25px;
     }
   </style>
 
-  <a class="pixel-link">
-    <slot />
-  </a>
+  <input type="text" class="pixel-input">
 `;
 
-class PixelLink extends HTMLElement {
+class PixelInput extends HTMLElement {
   constructor() {
     super();
     const color = this.getAttribute('color') || 'default';
@@ -76,12 +61,11 @@ class PixelLink extends HTMLElement {
 
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
-    const link = this.shadowRoot.querySelector('a');
+    const input = this.shadowRoot.querySelector('input');
 
-    link.classList.add(`color-${color}`);
-    link.classList.add(`size-${size}`);
-    link.href = this.getAttribute('href');
+    input.classList.add(`color-${color}`);
+    input.classList.add(`size-${size}`);
   }
 }
 
-window.customElements.define('pixel-link', PixelLink);
+window.customElements.define('pixel-input', PixelInput);
