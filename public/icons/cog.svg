@@ -1,0 +1,50 @@
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_12_1403)">
+<path d="M16.6218 9.83313H31.6218" stroke="white" stroke-width="4"/>
+<line x1="41.1218" y1="18.8331" x2="41.1218" y2="33.8331" stroke="white" stroke-width="4"/>
+<line y1="-2" x2="15" y2="-2" transform="matrix(-1.47074e-08 1 1 9.66882e-09 9.12183 18.8331)" stroke="white" stroke-width="4"/>
+<g clip-path="url(#clip1_12_1403)">
+<line y1="-2" x2="6" y2="-2" transform="matrix(-1 0 0 1 18.1218 14.3331)" stroke="white" stroke-width="4"/>
+<line y1="-2" x2="10" y2="-2" transform="matrix(-1.10305e-08 1 1 1.28918e-08 12.1218 10.3331)" stroke="white" stroke-width="4"/>
+</g>
+<g clip-path="url(#clip2_12_1403)">
+<line x1="30.1218" y1="12.3331" x2="36.1218" y2="12.3331" stroke="white" stroke-width="4"/>
+<line x1="38.1218" y1="10.3331" x2="38.1218" y2="20.3331" stroke="white" stroke-width="4"/>
+</g>
+<path d="M16.6218 42.8331H31.6218" stroke="white" stroke-width="4"/>
+<g clip-path="url(#clip3_12_1403)">
+<line x1="18.1218" y1="40.3331" x2="12.1218" y2="40.3331" stroke="white" stroke-width="4"/>
+<line x1="10.1218" y1="42.3331" x2="10.1218" y2="32.3331" stroke="white" stroke-width="4"/>
+</g>
+<g clip-path="url(#clip4_12_1403)">
+<line y1="-2" x2="6" y2="-2" transform="matrix(1 0 0 -1 30.1218 38.3331)" stroke="white" stroke-width="4"/>
+<line y1="-2" x2="10" y2="-2" transform="matrix(1.10305e-08 -1 -1 -1.28918e-08 36.1218 42.3331)" stroke="white" stroke-width="4"/>
+</g>
+<rect x="21.1672" y="0.999908" width="5.90897" height="8.48766" fill="white"/>
+<rect x="21.1672" y="42.5121" width="5.90897" height="8.48766" fill="white"/>
+<rect width="6.57659" height="7.87111" transform="matrix(0.730736 0.68266 -0.480484 0.877004 10.2659 36.3397)" fill="white"/>
+<rect width="6.57659" height="7.87111" transform="matrix(-0.730736 0.68266 0.480484 0.877004 10.8057 4.99991)" fill="white"/>
+<path d="M39.2181 16.0159L34.4123 11.5263L38.1943 4.62333L43 9.1129L39.2181 16.0159Z" fill="white"/>
+<path d="M37.678 47.5035L42.4837 43.014L38.7018 36.111L33.896 40.6005L37.678 47.5035Z" fill="white"/>
+<rect y="21.9999" width="5.90897" height="8.48766" fill="white"/>
+<rect x="42.0911" y="22.4753" width="5.90897" height="8.48766" fill="white"/>
+<path d="M19 21H29V31H19V21Z" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_12_1403">
+<rect width="50" height="50" fill="white"/>
+</clipPath>
+<clipPath id="clip1_12_1403">
+<rect width="7.5" height="7.5" fill="white" transform="translate(9.12183 11.3331)"/>
+</clipPath>
+<clipPath id="clip2_12_1403">
+<rect width="7.5" height="7.5" fill="white" transform="matrix(-1 0 0 1 39.1218 11.3331)"/>
+</clipPath>
+<clipPath id="clip3_12_1403">
+<rect width="7.5" height="7.5" fill="white" transform="matrix(1 0 0 -1 9.12183 41.3331)"/>
+</clipPath>
+<clipPath id="clip4_12_1403">
+<rect width="7.5" height="7.5" fill="white" transform="translate(39.1218 41.3331) rotate(-180)"/>
+</clipPath>
+</defs>
+</svg>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connect 4 - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
+    <script type="module" src="./components/PixelButton.js"></script>
+    <script type="module" src="./components/PixelLink.js"></script>
+    <script type="module" src="../components/PageTitle.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <header> 
+        <div></div>
+        <nav class="secondary-nav">
+          <pixel-link href="/pages/profile.html" size="xs"><img src="../icons/profile.svg" /></pixel-link>
+          <pixel-link href="/pages/friends.html" size="xs"><img src="../icons/friend.svg" /></pixel-link>
+          <pixel-link href="/pages/settings.html" size="xs"><img src="../icons/wrench.svg" /></pixel-link>
+        </nav>
+      </header>
+      <page-title></page-title>
+
+
+      <nav class="main-nav">
+        <pixel-link href="/pages/game.html">Play</pixel-link>
+        <pixel-link href="/pages/account.html">Account</pixel-link>
+        <pixel-link href="/pages/leaderboard.html">Leaderboard</pixel-link>
+      </nav>
+
+    </div>
+  </body>
+</html>
