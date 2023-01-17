@@ -36,7 +36,7 @@ template.innerHTML = `
       border: 1px solid white;
       border-bottom: none;
       padding:1rem;
-      overflow: scroll;
+      overflow: auto;
       height: 10rem;
       display: flex;
       flex-direction: column-reverse;

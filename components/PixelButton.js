@@ -4,7 +4,7 @@ template.innerHTML = `
     .pixel-btn{
       cursor: pointer;
       font-family: 'VT323', monospace;
-      display: block;
+
       text-transform: uppercase;
       position: relative;
       color: white;
@@ -15,6 +15,7 @@ template.innerHTML = `
       border-image-slice: 4;
       border-image-width: 2;
       border-image-outset: 0;
+      display: flex;
     }
     
     .color-error {
@@ -42,6 +43,13 @@ template.innerHTML = `
       margin: 1rem;
       font-size: 1.2rem;
       padding: 0.75rem 1rem;
+      min-width: 8rem;
+    }
+    
+    .size-xl{
+      margin: 1rem;
+      font-size: 2rem;
+      padding: 0.75rem 1.5rem;
       min-width: 8rem;
     }
 
