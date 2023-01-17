@@ -62,13 +62,15 @@ template.innerHTML = `
  
     }
     input::placeholder{
-          font-family: 'VT323', monospace;
+        font-family: 'VT323', monospace;
     }
- 
+    .input-msg{
+        font-family: 'VT323', monospace;
+    }
   </style>
 
   <label class="pixel-input">
-    <input type="text" placeholder="Say hello" >
+    <input type="text" placeholder="Say hello" class="input-msg">
     <slot />
   </label>
 `;
