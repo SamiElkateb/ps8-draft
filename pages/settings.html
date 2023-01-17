@@ -5,17 +5,18 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Connect 4 - Settings</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link href="../styles/index.css" rel="stylesheet">
     <script type="module" src="../components/PixelButton.js"></script>
     <script type="module" src="../components/PixelLink.js"></script>
     <script type="module" src="../components/PageTitle.js"></script>
+    <script src="../core/BaseEvents.js"></script>
   </head>
   <body>
     <div id="app">
-      <header> 
+      <header>
         <pixel-link size="xs" href="/"><img src="../icons/home.svg" /></pixel-link>
 
         <nav class="secondary-nav">
@@ -25,7 +26,7 @@
       </header>
       <page-title title="Settings" logo="none"></page-title>
       <div style="display: flex;justify-content: center">
-        <pixel-button size="xl" onclick()>
+        <pixel-button size="xl" onclick="hideOneDisplayAnother('#unmute', '#mute')">
           Sound
           <img src="../icons/sound.svg" id="unmute"/>
           <img src="../icons/mute.svg" id="mute" style="display: none"/>
