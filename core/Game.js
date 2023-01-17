@@ -9,7 +9,7 @@ class GameGrid {
     if (!this.isValid({ x, y })) return { isSuccessful: false, isOver: false };
     this.matrix[y][x] = color;
     if (this.isOver({ x, y, color })) {
-      return { isSuccessful: false, isOver: true };
+      return { isSuccessful: true, isOver: true };
     }
     return { isSuccessful: true, isOver: false };
   }
