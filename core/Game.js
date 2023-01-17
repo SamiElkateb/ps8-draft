@@ -25,30 +25,33 @@ class GameGrid {
   }
 
   isOver({ x, y, color }) {
-    if (this.verifyDirection({
+    const vertical = this.verifyDirection({
       x, y, dir: 'top', num: 0, color,
-    })) return true;
-    if (this.verifyDirection({
+    }) + this.verifyDirection({
       x, y, dir: 'bot', num: 0, color,
-    })) return true;
-    if (this.verifyDirection({
+    });
+    if (vertical > 4) return true;
+
+    const horizontal = this.verifyDirection({
       x, y, dir: 'left', num: 0, color,
-    })) return true;
-    if (this.verifyDirection({
+    }) + this.verifyDirection({
       x, y, dir: 'right', num: 0, color,
-    })) return true;
-    if (this.verifyDirection({
+    });
+    if (horizontal > 4) return true;
+
+    const diagonal1 = this.verifyDirection({
       x, y, dir: 'top-left', num: 0, color,
-    })) return true;
-    if (this.verifyDirection({
-      x, y, dir: 'top-right', num: 0, color,
-    })) return true;
-    if (this.verifyDirection({
-      x, y, dir: 'bot-left', num: 0, color,
-    })) return true;
-    if (this.verifyDirection({
+    }) + this.verifyDirection({
       x, y, dir: 'bot-right', num: 0, color,
-    })) return true;
+    });
+    if (diagonal1 > 4) return true;
+
+    const diagonal2 = this.verifyDirection({
+      x, y, dir: 'top-right', num: 0, color,
+    }) + this.verifyDirection({
+      x, y, dir: 'bot-left', num: 0, color,
+    });
+    if (diagonal2 > 4) return true;
     return false;
   }
 
@@ -95,14 +98,14 @@ class GameGrid {
   verifyInstance({
     x, y, dir, num, color,
   }) {
-    if (num === 4) return true;
-    if (typeof this.matrix[y] === 'undefined' || typeof this.matrix[y][x] === 'undefined') return false;
+    if (num === 4) return num;
+    if (typeof this.matrix[y] === 'undefined' || typeof this.matrix[y][x] === 'undefined') return num;
     if (this.matrix[y][x] === color) {
       return this.verifyDirection({
         x, y, dir, num, color,
       });
     }
-    return false;
+    return num;
   }
 }
 
