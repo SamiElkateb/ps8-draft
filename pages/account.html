@@ -13,7 +13,7 @@
     <script type="module" src="../components/PixelLink.js"></script>
     <script type="module" src="../components/PixelInput.js"></script>
     <script type="module" src="../components/PageTitle.js"></script>
-    <script type="module" src="../core/BaseEvents.js"></script>
+    <script src="../core/BaseEvents.js"></script>
   </head>
   <body>
     <div id="app">
@@ -29,21 +29,24 @@
 
       <page-title title="Connexion" ></page-title>
       <nav class="connexion-nav">
-        <pixel-button onClick="hideOneDisplayAnother('#login-form','#signup-form')">Login</pixel-button>
-        <pixel-button>Signup</pixel-button>
+        <pixel-button onClick="switchDisplay('#login-form','#signup-form')">Login</pixel-button>
+        <pixel-button onClick="switchDisplay('#signup-form','#login-form')">Signup</pixel-button>
       </nav>
       <div class="form-container">
         <form id="login-form">
-          <pixel-input value="Username"></pixel-input>
-          <pixel-input value="Password"></pixel-input>
+          <pixel-input value="Username" placeholder="Username"></pixel-input>
+          <pixel-input value="Password" placeholder="Password"></pixel-input>
         </form>
 
         <form id="signup-form" style="display: none">
-          <pixel-input value="Username"></pixel-input>
-          <pixel-input value="Email"></pixel-input>
-          <pixel-input value="Password"></pixel-input>
+          <pixel-input value="Username" placeholder="Username"></pixel-input>
+          <pixel-input value="Email" placeholder="E-mail"></pixel-input>
+          <pixel-input value="Password" placeholder="Password"></pixel-input>
         </form>
       </div>
+      <nav class="connexion-nav">
+      <pixel-button>Confirm</pixel-button>
+      </nav>
 
 
     </div>

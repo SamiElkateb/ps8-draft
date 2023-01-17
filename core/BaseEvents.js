@@ -12,4 +12,11 @@ const hideOneDisplayAnother = (queryOne, queryTwo) => {
   displayOrHide(queryTwo);
 };
 
-export default hideOneDisplayAnother;
+const switchDisplay = (queryOne, queryTwo) => {
+  const elementOne = document.querySelector(queryOne);
+  const elementTwo = document.querySelector(queryTwo);
+  if (elementOne.style.display === 'none') {
+    elementOne.style.display = 'initial';
+    elementTwo.style.display = 'none';
+  }
+};
