@@ -41,6 +41,7 @@ template.innerHTML = `
     }
 
     .size-md{
+      border-radius: 1rem;
       margin: 1rem;
       font-size: 1.2rem;
       padding: 0.75rem 1rem;
@@ -57,12 +58,15 @@ template.innerHTML = `
     .pixel-btn:hover{
       opacity: 0.8;
     }
-
     ::slotted(*) {
       width:25px;
     }
+    .pixel-btn:disabled{
+      cursor: default;
+      opacity: 0.5;
+      background-color: rgba(255, 255, 255, 0.5);
+    }
   </style>
-
   <button class="pixel-btn">
     <slot />
   </button>
@@ -73,6 +77,7 @@ class PixelButton extends HTMLElement {
     super();
     const color = this.getAttribute('color') || 'default';
     const size = this.getAttribute('size') || 'md';
+    const isDisabled = this.getAttribute('disabled') === 'true';
 
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
@@ -80,6 +85,7 @@ class PixelButton extends HTMLElement {
 
     button.classList.add(`color-${color}`);
     button.classList.add(`size-${size}`);
+    button.disabled = isDisabled;
   }
 }
 

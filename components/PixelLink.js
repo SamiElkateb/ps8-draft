@@ -18,6 +18,7 @@ template.innerHTML = `
       border-image-slice: 4;
       border-image-width: 2;
       border-image-outset: 0;
+      border-radius: 1rem;
     }
     
     .color-error {
@@ -61,6 +62,11 @@ template.innerHTML = `
     ::slotted(*) {
       width:25px;
     }
+    .pixel-link[aria-disabled="true"]{
+      cursor: default;
+      opacity: 0.5;
+      background-color: rgba(255, 255, 255, 0.5);
+    }
   </style>
 
   <a class="pixel-link">
@@ -73,6 +79,7 @@ class PixelLink extends HTMLElement {
     super();
     const color = this.getAttribute('color') || 'default';
     const size = this.getAttribute('size') || 'md';
+    const isDisabled = this.getAttribute('disabled') === 'true';
 
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
@@ -80,7 +87,11 @@ class PixelLink extends HTMLElement {
 
     link.classList.add(`color-${color}`);
     link.classList.add(`size-${size}`);
-    link.href = this.getAttribute('href');
+    if (isDisabled) {
+      link.ariaDisabled = true;
+    } else {
+      link.href = this.getAttribute('href');
+    }
   }
 }
 
