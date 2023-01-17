@@ -6,12 +6,12 @@ class GameGrid {
   }
 
   add({ x, y, color }) {
-    if (!this.isValid({ x, y })) return { isValid: false, isOver: false };
+    if (!this.isValid({ x, y })) return { isSuccessful: false, isOver: false };
     this.matrix[y][x] = color;
     if (this.isOver({ x, y, color })) {
-      return { isValid: false, isOver: true };
+      return { isSuccessful: false, isOver: true };
     }
-    return { isValid: false, isOver: false };
+    return { isSuccessful: true, isOver: false };
   }
 
   isAvailable({ x, y }) {
