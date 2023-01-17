@@ -163,7 +163,7 @@ class BoardGrid extends HTMLElement {
       if (isOver) {
         this.isOver = true;
         setTimeout(() => { alert('Game Over'); });
-        window.location.replace('http://127.0.0.1:5173/pages/victory.html');
+        window.location.replace('/pages/victory.html');
       }
       this.togglePlayer();
     }
