@@ -43,7 +43,7 @@ header {
   align-items: center;
 }
 
-.login-form, .signup-form, .friend-form{
+.login-form, .signup-form, .friend-form, .win{
   display: flex;
   align-items: center;
   flex-direction: column;
