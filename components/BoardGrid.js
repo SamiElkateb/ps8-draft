@@ -107,6 +107,7 @@ class BoardGrid extends HTMLElement {
     this.shadowRoot.appendChild(template.content.cloneNode(true));
     this.boardGame = this.shadowRoot.querySelector('.board-grid');
     this.currentPlayer = 'red';
+    this.isOver = false;
   }
 
   mouseOverHandler(event) {
@@ -146,6 +147,7 @@ class BoardGrid extends HTMLElement {
   }
 
   clickHandler(event) {
+    if (this.isOver) return;
     const target = event.currentTarget;
     const stringCoord = target.id.replace('c', '').split('-');
     const coord = {
@@ -153,11 +155,15 @@ class BoardGrid extends HTMLElement {
       y: parseInt(stringCoord[1], 10),
       color: this.currentPlayer,
     };
-    const isSuccessful = this.grid.add(coord);
+    const { isSuccessful, isOver } = this.grid.add(coord);
     if (isSuccessful) {
       const img = this.createTokenElement();
       target.append(img);
       target.classList.add('invalid');
+      if (isOver) {
+        this.isOver = true;
+        alert('Game Over');
+      }
       this.togglePlayer();
     }
   }
