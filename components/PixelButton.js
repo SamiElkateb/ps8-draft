@@ -16,6 +16,7 @@ template.innerHTML = `
       border-image-width: 2;
       border-image-outset: 0;
       display: flex;
+      align-items: center;
     }
     
     .color-error {

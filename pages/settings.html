@@ -19,14 +19,18 @@
         <pixel-link size="xs" href="/"><img src="../icons/home.svg" /></pixel-link>
 
         <nav class="secondary-nav">
-          <pixel-link href="/pages/profile.html" size="xs"><img src="../icons/profile.svg" /></pixel-link>
-          <pixel-link href="/pages/friends.html" size="xs"><img src="../icons/friend.svg" /></pixel-link>
+          <pixel-link href="/pages/profile.html" size="xs"><img src="../icons/profile.svg"></pixel-link>
+          <pixel-link href="/pages/friends.html" size="xs"><img src="../icons/friend.svg"></pixel-link>
         </nav>
       </header>
       <page-title title="Settings" logo="none"></page-title>
       <div style="display: flex;justify-content: center">
-        <pixel-button size="xl" id="unmute">Sound<img src="../icons/sound.svg"/></pixel-button>
-        <pixel-button size="xl" id="mute" style="display: none">Sound<img src="../icons/mute.svg"/></pixel-button>
+        <pixel-button size="xl" onclick()>
+          Sound
+          <img src="../icons/sound.svg" id="unmute"/>
+          <img src="../icons/mute.svg" id="mute" style="display: none"/>
+        </pixel-button>
+        <!--<button onclick=""></button> -->
       </div>
     </div>
   </body>
