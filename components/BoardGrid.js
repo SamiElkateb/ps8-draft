@@ -162,7 +162,7 @@ class BoardGrid extends HTMLElement {
       target.classList.add('invalid');
       if (isOver) {
         this.isOver = true;
-        alert('Game Over');
+        setTimeout(() => { alert('Game Over'); });
       }
       this.togglePlayer();
     }
