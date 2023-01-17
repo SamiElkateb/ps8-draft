@@ -13,6 +13,7 @@
     <script type="module" src="../components/PixelLink.js"></script>
     <script type="module" src="../components/PixelInput.js"></script>
     <script type="module" src="../components/PageTitle.js"></script>
+    <script type="module" src="../core/BaseEvents.js"></script>
   </head>
   <body>
     <div id="app">
@@ -28,18 +29,21 @@
 
       <page-title title="Connexion" ></page-title>
       <nav class="connexion-nav">
-        <pixel-button>Login</pixel-button>
+        <pixel-button onClick="hideOneDisplayAnother('#login-form','#signup-form')">Login</pixel-button>
         <pixel-button>Signup</pixel-button>
       </nav>
-      <form class="login-form">
-        <pixel-input value="Username"></pixel-input>
-        <pixel-input value="Password"></pixel-input>
-      </form>
+      <div class="form-container">
+        <form id="login-form">
+          <pixel-input value="Username"></pixel-input>
+          <pixel-input value="Password"></pixel-input>
+        </form>
 
-      <form class="signup-form">
-        <pixel-input value="Username"></pixel-input>
-        <pixel-input value="Password"></pixel-input>
-      </form>
+        <form id="signup-form" style="display: none">
+          <pixel-input value="Username"></pixel-input>
+          <pixel-input value="Email"></pixel-input>
+          <pixel-input value="Password"></pixel-input>
+        </form>
+      </div>
 
 
     </div>
