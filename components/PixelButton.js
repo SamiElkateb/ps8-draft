@@ -1,5 +1,4 @@
-const template = document.createElement('template');
-template.innerHTML = `
+const css = `
   <style>
     .pixel-btn{
       cursor: pointer;
@@ -67,25 +66,26 @@ template.innerHTML = `
       background-color: rgba(255, 255, 255, 0.5);
     }
   </style>
-  <button class="pixel-btn">
-    <slot />
-  </button>
 `;
 
 class PixelButton extends HTMLElement {
   constructor() {
     super();
+    this.attachShadow({ mode: 'open' });
+    this.render();
+  }
+
+  render() {
     const color = this.getAttribute('color') || 'default';
     const size = this.getAttribute('size') || 'md';
-    const isDisabled = this.getAttribute('disabled') === 'true';
+    const disabled = this.getAttribute('disabled') === 'true' ? 'disabled="true"' : '';
+    const classNames = `color-${color} size-${size}`;
 
-    this.attachShadow({ mode: 'open' });
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
-    const button = this.shadowRoot.querySelector('button');
-
-    button.classList.add(`color-${color}`);
-    button.classList.add(`size-${size}`);
-    button.disabled = isDisabled;
+    this.shadowRoot.innerHTML = `${css}
+      <button class="pixel-btn ${classNames}" ${disabled}>
+        <slot />
+      </button>
+    `;
   }
 }
 

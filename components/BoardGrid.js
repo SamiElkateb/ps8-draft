@@ -162,8 +162,8 @@ class BoardGrid extends HTMLElement {
       target.classList.add('invalid');
       if (isOver) {
         this.isOver = true;
-        setTimeout(() => { alert('Game Over'); });
-        window.location.replace('/pages/victory.html');
+        const gameOverEvent = new CustomEvent('game-over', { detail: { winner: this.currentPlayer, gameModer: 'local' } });
+        this.dispatchEvent(gameOverEvent);
       }
       this.togglePlayer();
     }

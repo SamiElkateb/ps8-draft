@@ -1,5 +1,4 @@
-const template = document.createElement('template');
-template.innerHTML = `
+const css = `
   <style>
     h1 {
       text-transform: uppercase;
@@ -28,31 +27,28 @@ template.innerHTML = `
     }
 
   </style>
-  <div class="page-title">
-    <h1></h1>
-    <h2></h2>
-    <img src="../icons/logo.svg" class="logo" />
-  </div>
 `;
 
 class PageTitle extends HTMLElement {
   constructor() {
     super();
-    const title = this.getAttribute('title') || 'Connect 4';
-    const subtitle = this.getAttribute('subtitle') || '';
 
     this.attachShadow({ mode: 'open' });
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
-    this.shadowRoot.querySelector('h1').innerText = title;
-    this.shadowRoot.querySelector('h2').innerText = subtitle;
+    this.render();
   }
 
-  connectedCallback() {
-    if (this.getAttribute('logo') === 'none') this.shadowRoot.querySelector('.logo').style.display = 'none';
+  render() {
+    const title = this.getAttribute('title') || 'Connect 4';
+    const subtitle = this.getAttribute('subtitle') || '';
+    const logo = this.getAttribute('logo') !== 'none' ? '<img src="../icons/logo.svg" class="logo" />' : '';
+    this.shadowRoot.innerHTML = `${css}
+      <div class="page-title">
+        <h1>${title}</h1>
+        <h2>${subtitle}</h2>
+        ${logo}
+      </div>
+    `;
   }
-
-  // disconnectedCallback() {
-  // }
 }
 
 window.customElements.define('page-title', PageTitle);

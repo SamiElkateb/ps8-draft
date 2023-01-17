@@ -1,5 +1,4 @@
-const template = document.createElement('template');
-template.innerHTML = `
+const css = `
   <style>
     .pixel-input{
       cursor: pointer;
@@ -74,32 +73,31 @@ template.innerHTML = `
       color:white;
     }
   </style>
-
-  <label class="pixel-input">
-    <input type="text" placeholder="Say hello" class="input-msg">
-    <slot />
-  </label>
 `;
 
 class PixelInput extends HTMLElement {
   constructor() {
     super();
+    this.attachShadow({ mode: 'open' });
+    this.render();
+  }
+
+  render() {
     const color = this.getAttribute('color') || 'default';
     const size = this.getAttribute('size') || 'md';
     const placeholder = this.getAttribute('placeholder') || '';
     const isDisabled = this.getAttribute('disabled') === 'true';
+    const classNames = `color-${color} size-${size}`;
+    const pixelInputClassNames = isDisabled ? 'disabled' : '';
+    const disabled = isDisabled ? 'disabled="true"' : '';
 
-    this.attachShadow({ mode: 'open' });
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
-    const input = this.shadowRoot.querySelector('input');
-
-    input.classList.add(`color-${color}`);
-    input.classList.add(`size-${size}`);
-    input.placeholder = placeholder;
-    if (isDisabled) {
-      this.shadowRoot.querySelector('.pixel-input').classList.add('disabled');
-      input.disabled = isDisabled;
-    }
+    this.shadowRoot.innerHTML = `
+      ${css}
+        <label class="pixel-input ${pixelInputClassNames}">
+          <input type="text" placeholder="${placeholder}" class="input-msg ${classNames}" ${disabled}>
+          <slot />
+        </label>
+    `;
   }
 }
 

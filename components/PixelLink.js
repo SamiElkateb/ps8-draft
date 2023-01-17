@@ -1,5 +1,4 @@
-const template = document.createElement('template');
-template.innerHTML = `
+const css = `
   <style>
     .pixel-link{
       box-sizing: border-box;
@@ -68,30 +67,27 @@ template.innerHTML = `
       background-color: rgba(255, 255, 255, 0.5);
     }
   </style>
-
-  <a class="pixel-link">
-    <slot />
-  </a>
 `;
 
 class PixelLink extends HTMLElement {
   constructor() {
     super();
+    this.attachShadow({ mode: 'open' });
+    this.render();
+  }
+
+  render() {
     const color = this.getAttribute('color') || 'default';
     const size = this.getAttribute('size') || 'md';
-    const isDisabled = this.getAttribute('disabled') === 'true';
+    const disabled = this.getAttribute('disabled') === 'true' ? 'aria-disabled="true"' : '';
+    const classNames = `color-${color} size-${size}`;
+    const href = disabled === '' ? this.getAttribute('href') : '';
 
-    this.attachShadow({ mode: 'open' });
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
-    const link = this.shadowRoot.querySelector('a');
-
-    link.classList.add(`color-${color}`);
-    link.classList.add(`size-${size}`);
-    if (isDisabled) {
-      link.ariaDisabled = true;
-    } else {
-      link.href = this.getAttribute('href');
-    }
+    this.shadowRoot.innerHTML = `${css}
+      <a class="pixel-link ${classNames}" href="${href}" ${disabled}>
+        <slot />
+      </a>
+    `;
   }
 }
 

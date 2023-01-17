@@ -14,25 +14,12 @@
       <script type="module" src="../components/PageTitle.js"></script>
       <script type="module" src="../components/BoardGrid.js"></script>
       <script type="module" src="../components/ChatBox.js"></script>
+      <script type="module" src="../components/GameContext.js"></script>
 </head>
 <body>
 <div id="app">
-  <header>
-    <pixel-link size="xs" href="/"><img src="../icons/home.svg" /></pixel-link>
 
-    <nav class="secondary-nav">
-      <pixel-link href="/pages/profile.html" size="xs"><img src="../icons/profile.svg" /></pixel-link>
-      <pixel-link href="/pages/friends.html" size="xs"><img src="../icons/friend.svg" /></pixel-link>
-      <pixel-link href="/pages/settings.html" size="xs"><img src="../icons/wrench.svg" /></pixel-link>
-    </nav>
-  </header>
-
-  <page-title title="Player1 VS Player2"></page-title>
-  <div class="game-container">
-    <chat-box></chat-box>
-    <board-grid></board-grid>
-    <pixel-button style="align-self: center">Save game</pixel-button>
-  </div>
+  <game-context></game-context>
 
 
 </div>
