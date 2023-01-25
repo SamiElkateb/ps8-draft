@@ -1,5 +1,6 @@
-const css = `
-  <style>
+import styled from '../core/styled';
+
+const css = styled`
     .pixel-input{
       cursor: pointer;
       font-family: 'VT323', monospace;
@@ -72,7 +73,6 @@ const css = `
     .pixel-input.disabled input::placeholder{
       color:white;
     }
-  </style>
 `;
 
 class PixelInput extends HTMLElement {

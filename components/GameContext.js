@@ -1,26 +1,26 @@
 import './EndGame';
+import styled from '../core/styled';
 
-const style = `<style>
-header {
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-}
-.secondary-nav{
-  display: flex;
-}
-.main-nav{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.game-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-}
-</style>`;
+const css = styled`
+  header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  .secondary-nav{
+    display: flex;
+  }
+  .main-nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .game-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}`;
 
 class GameContext extends HTMLElement {
   constructor() {
@@ -90,9 +90,9 @@ class GameContext extends HTMLElement {
         </header>`;
 
     if (!this.isOver) {
-      this.shadowRoot.innerHTML = style + header + game;
+      this.shadowRoot.innerHTML = css + header + game;
     } else {
-      this.shadowRoot.innerHTML = style + header + endGame;
+      this.shadowRoot.innerHTML = css + header + endGame;
     }
     this.domChangedCallback();
   }

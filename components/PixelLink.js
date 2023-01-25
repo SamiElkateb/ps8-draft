@@ -1,5 +1,6 @@
-const css = `
-  <style>
+import styled from '../core/styled';
+
+const css = styled`
     .pixel-link{
       box-sizing: border-box;
       text-decoration: none;
@@ -66,7 +67,6 @@ const css = `
       opacity: 0.5;
       background-color: rgba(255, 255, 255, 0.5);
     }
-  </style>
 `;
 
 class PixelLink extends HTMLElement {

@@ -1,5 +1,6 @@
-const css = `
-  <style>
+import styled from '../core/styled';
+
+const css = styled`
     h1 {
       text-transform: uppercase;
       color: white;
@@ -9,7 +10,7 @@ const css = `
       font-weight: normal;
     }
 
-    h2{
+    h2 {
       margin: 0px;
     }
 
@@ -25,8 +26,6 @@ const css = `
     img {
       width: 180px;
     }
-
-  </style>
 `;
 
 class PageTitle extends HTMLElement {

@@ -1,13 +1,12 @@
-const css = `
-<style>
+import styled from '../core/styled';
+
+const css = styled`
   .main-nav{
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-</style>
 `;
-
 class EndGame extends HTMLElement {
   constructor() {
     super();

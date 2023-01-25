@@ -1,5 +1,6 @@
-const css = `
-  <style>
+import styled from '../core/styled';
+
+const css = styled`
     .pixel-btn{
       cursor: pointer;
       font-family: 'VT323', monospace;
@@ -65,7 +66,6 @@ const css = `
       opacity: 0.5;
       background-color: rgba(255, 255, 255, 0.5);
     }
-  </style>
 `;
 
 class PixelButton extends HTMLElement {
