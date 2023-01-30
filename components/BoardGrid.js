@@ -155,15 +155,20 @@ class BoardGrid extends HTMLElement {
       y: parseInt(stringCoord[1], 10),
       color: this.currentPlayer,
     };
-    const { isSuccessful, isOver } = this.grid.add(coord);
+    const { isSuccessful, isOver, hasWon } = this.grid.add(coord);
     if (isSuccessful) {
       const img = this.createTokenElement();
       target.append(img);
       target.classList.add('invalid');
       if (isOver) {
         this.isOver = true;
-        const gameOverEvent = new CustomEvent('game-over', { detail: { winner: this.currentPlayer, gameModer: 'local' } });
-        this.dispatchEvent(gameOverEvent);
+        if (!hasWon) { // possibilite de rajouter un ecran egalite
+          const gameOverEvent = new CustomEvent('game-over', { detail: { winner: 'No', gameModer: 'local' } });
+          this.dispatchEvent(gameOverEvent);
+        } else {
+          const gameOverEvent = new CustomEvent('game-over', { detail: { winner: this.currentPlayer, gameModer: 'local' } });
+          this.dispatchEvent(gameOverEvent);
+        }
       }
       this.togglePlayer();
     }

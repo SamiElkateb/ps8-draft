@@ -9,9 +9,12 @@ class GameGrid {
     if (!this.isValid({ x, y })) return { isSuccessful: false, isOver: false };
     this.matrix[y][x] = color;
     if (this.isOver({ x, y, color })) {
-      return { isSuccessful: true, isOver: true };
+      return { isSuccessful: true, isOver: true, hasWon: true };
     }
-    return { isSuccessful: true, isOver: false };
+    if (this.isFull()) {
+      return { isSuccessful: true, isOver: true, hasWon: false };
+    }
+    return { isSuccessful: true, isOver: false, hasWon: false };
   }
 
   isAvailable({ x, y }) {
@@ -91,7 +94,8 @@ class GameGrid {
         return this.verifyInstance({
           x: x + 1, y: y - 1, dir, num: num + 1, color,
         });
-      default: return false;
+      default:
+        return false;
     }
   }
 
@@ -107,6 +111,14 @@ class GameGrid {
     }
     return num;
   }
-}
 
+  isFull() {
+    for (let i = 0; i < this.width; i += 1) {
+      for (let j = 0; j < this.height; j += 1) {
+        if (typeof this.matrix[j][i] === 'undefined') return false;
+      }
+    }
+    return true;
+  }
+}
 export default GameGrid;
