@@ -163,7 +163,7 @@ class BoardGrid extends HTMLElement {
       if (isOver) {
         this.isOver = true;
         if (!hasWon) { // possibilite de rajouter un ecran egalite
-          const gameOverEvent = new CustomEvent('game-over', { detail: { winner: 'No', gameModer: 'local' } });
+          const gameOverEvent = new CustomEvent('game-over', { detail: { winner: null, gameModer: 'local' } });
           this.dispatchEvent(gameOverEvent);
         } else {
           const gameOverEvent = new CustomEvent('game-over', { detail: { winner: this.currentPlayer, gameModer: 'local' } });

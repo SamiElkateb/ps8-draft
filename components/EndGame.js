@@ -18,8 +18,8 @@ class EndGame extends HTMLElement {
   }
 
   populateLocalEndGameScreen() {
-    this.iconName = 'crown';
-    this.pageTitle = `${this.winner} player wins!`;
+    this.iconName = this.getAttribute('endGameType') === 'nyancat' ? 'nyancat' : 'crown';
+    if (this.winner !== null) { this.pageTitle = `${this.winner} player wins!`; } else { this.pageTitle = 'Even ! Nyancat cannot wait to see a winner'; }
     this.replayLink = '/pages/localGame.html';
   }
 

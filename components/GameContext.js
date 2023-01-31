@@ -32,10 +32,20 @@ class GameContext extends HTMLElement {
     this.render();
   }
 
-  gameOverHandler = (event) => {
+  gameOverHandlerWinner = (event) => {
     this.winner = event.detail.winner;
     this.gameMode = event.detail.gameMode;
     this.isOver = true;
+    this.endGameType = 'crown';
+    this.render();
+  };
+
+  gameOverHandlerNoWinner = (event) => {
+    this.winner = null;
+    this.gameMode = event.detail.gameMode;
+    this.isOver = true;
+    console.log('IsNyan');
+    this.endGameType = 'nyancat';
     this.render();
   };
 
@@ -46,11 +56,12 @@ class GameContext extends HTMLElement {
 
   connectEventListeners() {
     if (this.boardGrid) {
-      this.boardGrid.removeEventListener('game-over', this.gameOverHandler);
+      this.boardGrid.removeEventListener('game-over', this.gameOverHandlerWinner);
     }
     this.boardGrid = this.shadowRoot.querySelector('board-grid');
     if (this.boardGrid) {
-      this.boardGrid.addEventListener('game-over', this.gameOverHandler);
+      if (this.boardGrid.winner != null) this.boardGrid.addEventListener('game-over', this.gameOverHandlerWinner);
+      this.boardGrid.addEventListener('game-over', this.gameOverHandlerNoWinner);
     }
 
     if (this.endGame) {
@@ -79,7 +90,7 @@ class GameContext extends HTMLElement {
           <pixel-button style="align-self: center">Save game</pixel-button>
         </div>`;
 
-    const endGame = `<end-game winner="${this.winner}" gameMode="${this.gameMode}"></end-game>`;
+    const endGame = `<end-game winner="${this.winner}" gameMode="${this.gameMode}" endGameType="${this.endGameType}"></end-game>`;
     const header = `<header>
           <pixel-link size="xs" href="/"><img src="../icons/home.svg" /></pixel-link>
           <nav class="secondary-nav">
